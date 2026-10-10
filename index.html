@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration System</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <div class="background-circle circle-one"></div>
+    <div class="background-circle circle-two"></div>
+
+    <main class="container">
+        <div class="logo">✦</div>
+
+        <h1>Student Registration</h1>
+        <p class="subtitle">Enter student details and calculate results</p>
+
+        <form id="studentForm">
+            <div class="form-group">
+                <label for="name">Student Name</label>
+                <input type="text" id="name"
+                       placeholder="Enter full name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="roll">Roll Number</label>
+                <input type="text" id="roll"
+                       placeholder="Enter roll number" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email"
+                       placeholder="student@example.com" required>
+            </div>
+
+            <div class="form-group">
+                <label for="course">Course</label>
+                <select id="course" required>
+                    <option value="">Select your course</option>
+                    <option value="MCA">MCA</option>
+                    <option value="BCA">BCA</option>
+                    <option value="BSc IT">BSc IT</option>
+                    <option value="BSc Computer Science">BSc Computer Science</option>
+                </select>
+            </div>
+
+            <h3 class="section-heading">Subject Marks <span>Out of 100</span></h3>
+
+            <div class="marks-grid">
+                <div class="form-group">
+                    <label for="m1">HTML5</label>
+                    <input type="number" id="m1" placeholder="0–100"
+                           min="0" max="100" step="1" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="m2">CSS3</label>
+                    <input type="number" id="m2" placeholder="0–100"
+                           min="0" max="100" step="1" required>
+                </div>
+
+                <div class="form-group full-width">
+                    <label for="m3">JavaScript</label>
+                    <input type="number" id="m3" placeholder="0–100"
+                           min="0" max="100" step="1" required>
+                </div>
+            </div>
+
+            <button type="submit" class="submit-btn">
+                Calculate Result <span>→</span>
+            </button>
+
+            <button type="reset" class="reset-btn">Clear Form</button>
+
+            <p id="message" role="status" aria-live="polite"></p>
+        </form>
+
+        <section id="result" class="result-card" hidden>
+            <h2>Result Summary</h2>
+
+            <p><strong>Student:</strong> <span id="resultName"></span></p>
+            <p><strong>Roll Number:</strong> <span id="resultRoll"></span></p>
+            <p><strong>Course:</strong> <span id="resultCourse"></span></p>
+
+            <div class="result-grid">
+                <div class="result-box">
+                    <span>Total Marks</span>
+                    <strong id="resultTotal"></strong>
+                </div>
+
+                <div class="result-box">
+                    <span>Percentage</span>
+                    <strong id="resultPercentage"></strong>
+                </div>
+            </div>
+
+            <p class="status-line">
+                Final Result: <strong id="resultStatus"></strong>
+            </p>
+
+            <details>
+                <summary>View Student JSON</summary>
+                <pre id="jsonOutput"></pre>
+            </details>
+        </section>
+
+        <section class="records-section">
+            <h2>Registered Students</h2>
+            <p class="records-subtitle">Your saved student records</p>
+
+            <div id="studentRecords" class="student-records"></div>
+        </section>
+
+        <footer>Powered by HTML5 · CSS3 · JavaScript</footer>
+    </main>
+
+</body>
+</html>
